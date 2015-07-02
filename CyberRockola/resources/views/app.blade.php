@@ -4,10 +4,11 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Cyber Rockola</title>
-   
+	<title>Laravel</title>
 
+	<link href="/css/app.css" rel="stylesheet">
 	<link href="/css/bootstrap.css" rel="stylesheet">
+	
 
 	<!-- Fonts -->
 	<link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
@@ -57,10 +58,13 @@
 	@yield('content')
 
 	<!-- Scripts -->
+	 
+	 
 	
-		<script src="/js/jquery-2.4.1.min.js"></script>
-       <script src="/js/bootstrap.min.js"></script>
-	
-	
+	<script src="/js/jquery-2.4.1.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="/js/validaciones.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
 </body>
 </html>

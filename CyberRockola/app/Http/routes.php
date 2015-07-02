@@ -11,12 +11,26 @@
 |
 */
 
-Route::get('/', 'WelcomeController@index');
 
-Route::get('home', 'HomeController@index');
-Route::resource('artistas', 'ArtistaController');
+Route::get('/', 'HomeController@index');
+//Route::get('login', 'AuthController@postLogin');
+
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
 ]);
+
+	Route::group(['middleware' => 'auth'], function () {
+   	Route::post('apply/upload', 'CancionController@store');
+    Route::resource('artistas', 'ArtistaController');
+	Route::resource('canciones', 'CancionController');
+	Route::get('canciones/{id}/agregarLista', 'CancionController@agregarLista');
+    
+});
+
+    
+
+
+
+  

@@ -1,31 +1,19 @@
 @extends('app')
 
 @section('content')
-    <h1>Write a new article</h1>
+    <h1>Artista</h1>
     <hr>
 
-    {!! Form::open(['url' => 'articles']) !!}
+    {!! Form::open(['url' => 'artistas']) !!}
         <!-- Title Form Input -->
         <div class="form-group">
-            {{!! Form::label('title','Título: ')  !!}}
-            {!! Form::text('title', null , ['class'=>'form-control'])  !!}
-        </div>
-
-        <!-- Body Form Input -->
-        <div class="form-group">
-            {!! Form::label('body','Contenido del Artículo: ')  !!}
-            {!! Form::textarea('body', null , ['class'=>'form-control'])  !!}
-        </div>
-
-        <!-- Published_at Form Input -->
-        <div class="form-group">
-            {!! Form:: label('published_at','Publicado en: ')  !!}
-            {!! Form::input('date','published_at', date('Y-m-d'), ['class'=>'form-control'])  !!}
+            {!! Form::label('tutilo','Nombre ')  !!}
+            {!! Form::text('nombre', null , ['class'=>'form-control'])  !!}
         </div>
 
         <!-- Submit -->
         <div class="form-group">
-            {!! Form::submit('Agregar Articulo', ['class'=>'btn btn-primary form-control'])  !!}
+            {!! Form::submit('Agregar', ['class'=>'btn btn-primary form-control'])  !!}
         </div>
     {!! Form::close() !!}
 

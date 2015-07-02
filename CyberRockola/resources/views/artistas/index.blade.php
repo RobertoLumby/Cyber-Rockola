@@ -14,8 +14,13 @@
             <td>{{ $artista->id }}</td>   
             <td>{{ $artista->nombre}}</td>    
             <td>
-                {{link_to("songs/$artista->id/edit", 'Editar', $attributes = array(), $secure = null)}}
-                {{link_to("songs/$artista->id/delete", 'Eliminar', $attributes = array(), $secure = null)}}
+
+                 <a href="/artistas/{{{$artista->id}}}/edit" class="btn btn-info" role="button">Editar</a>
+                {!!Form::open(array('url' => "/artistas/$artista->id", 'method' => 'DELETE'))!!}
+                
+                       <button class="btn btn-info" role="button">Eliminar</button>
+                {!!Form::close()!!}    
+
             </td>   
         </tr>
     @endforeach

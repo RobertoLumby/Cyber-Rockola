@@ -17,7 +17,7 @@ class ArtistaController extends Controller {
 	{
 		
 		
-	$artistas = Artista::get()->all();
+		$artistas = Artista::get()->all();
 	
 		return view('artistas.index',compact('artistas'));
 	}
@@ -39,7 +39,8 @@ class ArtistaController extends Controller {
 	 */
 	public function store()
 	{
-		//
+		Artista::create(\Input::all());
+		return redirect('artistas');
 	}
 
 	/**
@@ -50,7 +51,7 @@ class ArtistaController extends Controller {
 	 */
 	public function show($id)
 	{
-		//
+		
 	}
 
 	/**
@@ -61,7 +62,8 @@ class ArtistaController extends Controller {
 	 */
 	public function edit($id)
 	{
-		//
+		$artista = Artista::find($id);
+		return view('artistas.edit', compact('artista'));
 	}
 
 	/**
@@ -72,7 +74,11 @@ class ArtistaController extends Controller {
 	 */
 	public function update($id)
 	{
-		//
+		$artistas = Artista::find($id);
+		$nombre = \Input::get('nombre');
+		$artistas->nombre = $nombre;
+		$artistas->save();
+		return redirect('artistas');
 	}
 
 	/**
@@ -83,7 +89,9 @@ class ArtistaController extends Controller {
 	 */
 	public function destroy($id)
 	{
-		//
+		$artistas = Artista::find($id);
+		$artistas->delete();
+		return redirect('artistas');
 	}
 
 }

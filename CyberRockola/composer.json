@@ -5,8 +5,8 @@
 	"license": "MIT",
 	"type": "project",
 	"require": {
-		
-		"illuminate/html": "5.0",
+		"fintech-fab/laravel-queue-rabbitmq": "5.0",
+		"laravelcollective/html": "~5.0",
 		"laravel/framework": "5.0.*"
 	},
 	"require-dev": {

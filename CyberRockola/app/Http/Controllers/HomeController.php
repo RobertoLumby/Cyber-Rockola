@@ -1,5 +1,6 @@
 <?php namespace App\Http\Controllers;
-
+use \App\Models\Cancion;
+use \App\Models\Artista;
 class HomeController extends Controller {
 
 	/*
@@ -30,7 +31,10 @@ class HomeController extends Controller {
 	 */
 	public function index()
 	{
-		return view('home');
+	$artistas = Artista::get()->all();		
+	$canciones = Cancion::get()->all();
+	$canciones = Cancion::paginate(10);
+	return view('canciones.index',compact('canciones','artistas'));
 	}
 
 }
